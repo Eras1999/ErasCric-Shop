@@ -1,0 +1,36 @@
+@mixin buttonStyles {
+  #wc-ppcp-express-button {
+    flex-wrap: wrap;
+
+    .paypal-buttons {
+      flex: 1 1 100%;
+
+      &:nth-child(n+2) {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.wfacp_smart_button_outer_buttons {
+  &.wfacp_button_count_1 {
+    #wc-ppcp-express-button {
+      display: flex;
+      justify-content: center;
+
+      .paypal-buttons {
+        margin: 0 5px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      @include buttonStyles
+    }
+  }
+
+  @for $i from 2 through 5 {
+    &.wfacp_button_count_#{$i} {
+      @include buttonStyles
+    }
+  }
+}

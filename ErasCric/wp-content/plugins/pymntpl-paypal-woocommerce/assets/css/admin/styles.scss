@@ -1,0 +1,386 @@
+.wc-ppcp-settings-container {
+  margin-left: 0.5em;
+
+  .wc-ppcp-settings-logo {
+    margin: 20px 0 0 0;
+    display: flex;
+    align-items: center;
+
+    .paymentplugins-logo {
+      max-width: 120px;
+    }
+
+    .paypal-logo {
+      max-width: 105px;
+    }
+
+    span {
+      margin: 0 10px;
+    }
+  }
+
+  .wc-ppcp-settings-navigation {
+
+  }
+
+  .nav-tab {
+    &:first-of-type {
+      margin-left: 0px;
+    }
+
+  }
+
+  label[for=woocommerce_ppcp_api_connect_to_paypal],
+  label[for=woocommerce_ppcp_api_create_webhook] {
+    position: relative;
+  }
+
+  #ppcp_button_demo {
+    max-width: 400px;
+    min-width: 300px;
+  }
+
+  .wc-ppcp-slider {
+    max-width: 350px;
+
+    .wc-ppcp-slider-val {
+      position: absolute;
+      right: -50px;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+  }
+
+  .paypal-buttons {
+    &:nth-child(n+2) {
+      margin-top: 5px;
+    }
+  }
+
+  .wc-ppcp__button {
+    position: relative;
+    display: flex;
+
+  }
+
+  .wc-ppcp-button__demo {
+    position: relative;
+    display: flex;
+
+    &:after {
+      content: "\f333";
+      font-family: Dashicons;
+      text-align: center;
+      line-height: 1;
+      color: #999;
+      display: block;
+      width: 24px;
+      float: left;
+      height: 100%;
+      line-height: 24px;
+      cursor: move;
+    }
+  }
+
+  .wc-ppcp-connect__status {
+    display: flex;
+    align-items: center;
+
+    span {
+      &.dashicons-yes {
+        color: #009e00;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .wc-ppcp-clipboard-container {
+    position: relative;
+    display: inline-block;
+
+    .wc-ppcp-clipboard {
+      cursor: pointer;
+
+      &:hover {
+        + .wc-ppcp-clipboard-hover {
+          visibility: visible;
+        }
+      }
+    }
+
+    .wc-ppcp-clipboard-hover {
+      visibility: hidden;
+      background-color: #333;
+      color: #fff;
+      padding: .618em 1em;
+      border-radius: 4px;
+    }
+  }
+
+  .delete-connected-account {
+    margin-top: 12px;
+  }
+
+  a.disabled {
+    color: #a7aaad !important;
+    border-color: #dcdcde !important;
+    background: #f6f7f7 !important;
+    box-shadow: none !important;
+    cursor: default;
+    transform: none !important;
+  }
+}
+
+.wc-ppcp-loader {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: -30px;
+  box-sizing: border-box;
+  transform: scale(.65);
+  position: absolute;
+
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    animation: ppcp-loader 1.3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #000 transparent transparent transparent;
+  }
+
+  div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+}
+
+@keyframes ppcp-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wc-ppcp-order-actions {
+  position: relative;
+  max-width: 120px;
+
+  .wc-ppcp-loader {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.65);
+  }
+}
+
+.wc-ppcp-paypal-actions-modal {
+  .wc-backbone-modal-content {
+    min-height: 469px;
+  }
+}
+
+.wc-ppcp-actions__article {
+  .wc-ppcp-actions-nav {
+    display: flex;
+    flex-direction: row;
+    margin: 0 -10px 30px -10px;
+
+    .wc-ppcp-nav-item {
+      padding: 0 10px;
+
+      &:not(:first-of-type) {
+        border-left: 1px solid #424242;
+      }
+
+      &.selected {
+        font-weight: 600;
+      }
+
+      a {
+        color: #424242;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #ppcp_capture_amount {
+    max-width: 150px;
+  }
+
+  .wc-ppcp-action-row {
+    display: flex;
+    flex-direction: column;
+
+    .wc-ppcp-action-item {
+      display: flex;
+      flex-direction: column;
+
+      &:not(:first-of-type) {
+        margin-top: 16px;
+      }
+
+      label {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .ppcp-shipping-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.wc-ppcp-actions__actions {
+  position: relative;
+
+  .wc-ppcp-loader {
+    right: 0;
+  }
+}
+
+.ppcp-order-actions-notices {
+
+  .ppcp-order-actions-notice {
+    padding: 10px;
+    margin-bottom: 20px;
+
+    &.error {
+      color: rgb(95, 33, 32);
+      background-color: rgb(253, 237, 237);
+    }
+
+    &.success {
+      color: rgb(30, 70, 32);
+      background-color: rgb(237, 247, 237);
+    }
+  }
+}
+
+#ppcp_product_data {
+  padding: 0 12px;
+
+  &.woocommerce_options_panel {
+    table {
+      label {
+        float: none;
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+
+  p {
+    &.form-field {
+      padding: 5px 20px 5px 150px !important;
+
+      @media only screen and (max-width: 500px) {
+        padding: 5px 0 !important;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes vx_spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes vx_spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+body {
+  &.vx_has-spinner {
+    overflow: hidden;
+    position: fixed;
+  }
+}
+
+.vx_has-spinner {
+  position: relative;
+}
+
+.vx_has-spinner {
+  &:before {
+    -webkit-animation: vx_fade-in .3s ease-out 0s both;
+    animation: vx_fade-in .3s ease-out 0s both;
+    background-color: rgba(255, 255, 255, 0.8);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  &:after {
+    -webkit-animation: vx_spin 620ms infinite linear;
+    animation: vx_spin 620ms infinite linear;
+    bottom: 15%;
+    content: '';
+    display: block;
+    left: calc(50% - 64px);
+    top: calc(50% - 64px);
+    margin: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1001;
+  }
+}
+
+.vx_has-spinner-large {
+  &:after {
+    background: url(../../img/paypal_spinner.svg);
+    height: 128px;
+    width: 128px;
+  }
+}
+
+.vx_spinner-message {
+  position: absolute;
+  top: calc(75px + 128px + 10px);
+  z-index: 1001;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 14px;
+}

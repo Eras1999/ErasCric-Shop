@@ -1,0 +1,61 @@
+.wc-block-components-express-payment--checkout {
+  .wc-block-components-express-payment__event-buttons {
+    &.wc-ppcp-sm__container {
+      & > li {
+        &#express-payment-method-paymentplugins_ppcp_express {
+          width: 100%;
+          padding: 0;
+        }
+
+        &[id^="express-payment-method-"] {
+          &:nth-child(n+2) {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wc-ppcp-popup__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  img {
+    max-width: 150px;
+    width: 110px;
+    height: 56px;
+    max-height: 77px;
+  }
+
+  p {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.wc-ppcp-components-payment-card__container {
+  .wc-ppcp-components-payment-card__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid hsla(0, 0%, 7%, .11);
+    border-radius: 4px;
+    padding: 10px 12px;
+
+    .wc-ppcp-components-payment-card__icon {
+      max-width: 60px;
+    }
+  }
+
+  .wc-ppcp-components-payment-card-cancel__container {
+    margin-top: 8px;
+    text-align: right;
+
+    .wc-ppcp-components-payment-card-cancel__label {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+    "packages": [
+        {
+            "name": "paymentplugins/paypal-php-sdk",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:paymentplugins/paypal-php-sdk.git",
+                "reference": "3193a8aa33cbafcdc12847cc35ff538069d6e8fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paymentplugins/paypal-php-sdk/zipball/3193a8aa33cbafcdc12847cc35ff538069d6e8fb",
+                "reference": "3193a8aa33cbafcdc12847cc35ff538069d6e8fb",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5.5 || ^9.3.5"
+            },
+            "time": "2024-03-18T20:13:22+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PaymentPlugins\\PayPalSDK\\": "src/"
+                }
+            },
+            "description": "Toolkit for developing PHP PayPal integrations",
+            "support": {
+                "source": "https://github.com/paymentplugins/paypal-php-sdk/tree/main",
+                "issues": "https://github.com/paymentplugins/paypal-php-sdk/issues"
+            },
+            "install-path": "../paymentplugins/paypal-php-sdk"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

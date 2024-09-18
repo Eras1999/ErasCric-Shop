@@ -1,0 +1,15 @@
+{
+  "name": "paymentplugins/paypal-php-sdk",
+  "description": "Toolkit for developing PHP PayPal integrations",
+  "autoload": {
+    "psr-4": {
+      "PaymentPlugins\\PayPalSDK\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5.5 || ^9.3.5"
+  },
+  "config": {
+    "platform-check": false
+  }
+}

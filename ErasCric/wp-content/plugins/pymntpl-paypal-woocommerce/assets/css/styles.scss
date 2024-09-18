@@ -1,0 +1,294 @@
+.wc-ppcp-hide-button {
+  display: none !important;
+
+  &#place_order {
+    display: none !important;
+  }
+}
+
+.wc-ppcp-cart-payments__container {
+  max-width: 100%;
+
+  &.below {
+    .wc-ppcp-cart-payment__methods {
+      margin: 10px 0 0 0;
+    }
+  }
+
+  .wc-ppcp-cart-payment__methods {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .wc-ppcp-cart-payment-method {
+      margin: 0;
+      list-style: none;
+
+      &.or {
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.wc-ppcp-product-payments__container {
+  width: 100%;
+
+  &.top {
+    margin: 0 0 10px 0;
+  }
+
+  &:not(top) {
+    margin: 10px 0 0 0;
+  }
+
+  .wc-ppcp-product-payment__methods {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .wc-ppcp-product-payment-method {
+      margin: 0;
+      list-style: none;
+
+      .disabled {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+.wc-ppcp-product-button-container {
+  &.disabled {
+    opacity: 0.4;
+  }
+}
+
+.wc-ppcp-loader {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: calc(50% - 25px);
+
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    animation: ppcp-loader 1.3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #000 transparent transparent transparent;
+  }
+
+  div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+}
+
+@keyframes ppcp-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#wc-ppcp-product-button-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  .paypal-buttons {
+    flex: 0 0 100%;
+
+    &:nth-child(n + 2) {
+      margin-top: 6px;
+    }
+  }
+}
+
+@mixin button-styling {
+  .paypal-buttons {
+    display: flex !important;
+
+    &:nth-child(n+2) {
+      margin-top: 8px;
+    }
+  }
+
+}
+
+.wc-ppcp-checkout-container {
+  @include button-styling;
+}
+
+#wc-ppcp-cart-button-container {
+  @include button-styling;
+}
+
+#wc-ppcp-product-button-container {
+  @include button-styling;
+}
+
+tr {
+  &.wc-ppcp-paylater-msg__container {
+    td {
+      &:before {
+        content: '' !important;
+      }
+    }
+  }
+}
+
+#wc-ppcp-paylater-msg-product {
+  margin-bottom: 10px;
+}
+
+.wc-ppcp-payment-method__container {
+  .wc-ppcp-popup__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    img {
+      max-width: 150px;
+      width: 110px;
+      height: 56px;
+      max-height: 77px;
+    }
+
+    p {
+      flex: 1 1 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}
+
+li {
+  &.payment_method_ppcp {
+    label {
+      &[for="payment_method_ppcp"] {
+        &:after {
+          content: '';
+          clear: both;
+          display: block;
+        }
+      }
+
+      &:first-of-type {
+        img {
+          max-width: 110px;
+          max-height: 29px;
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.wc-ppcp-express-checkout {
+  fieldset {
+    padding: 15px 25px 15px;
+    border: 1px solid #d1d1d1;
+    margin-bottom: 20px;
+    border-radius: 3px;
+
+    legend {
+      margin: 0 auto;
+      font-weight: 500;
+      padding: 0 1rem;
+    }
+  }
+
+  @mixin divider {
+    content: ' ';
+    height: 1px;
+    background: #d1d1d1;
+    display: block;
+    width: 50%;
+  }
+
+  .express-divider {
+    display: flex;
+    align-items: center;
+    top: -13px;
+    right: 0;
+    left: 0;
+    background: transparent;
+    white-space: nowrap;
+    font-size: 16px;
+
+    &:before {
+      @include divider;
+      margin-right: 1rem;
+    }
+
+    &:after {
+      @include divider;
+      margin-left: 1rem;
+    }
+  }
+
+  #wc-ppcp-express-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .paypal-buttons {
+      max-width: 240px;
+      margin: 0 5px;
+      flex: 1 1 150px;
+    }
+
+    @media (max-width: 575px) {
+      .paypal-buttons {
+        max-width: 100%;
+        flex: 1 1 100%;
+
+        &:nth-child(n+2) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.woocommerce-mini-cart__buttons {
+  #wc-ppcp-minicart-ppcp {
+    margin-top: 5px;
+  }
+
+  #wc-ppcp-minicart-msg {
+    margin-top: 10px;
+  }
+}
+
+.wc-ppcp-paylater-msg-shop-container {
+  margin-top: 10px;
+}
+
+[name^="__zoid__paypal_message"] {
+  opacity: 1 !important;
+}

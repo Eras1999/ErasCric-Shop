@@ -1,0 +1,27 @@
+{
+  "apiVersion": 2,
+  "name": "wc-ppcp/checkout-block",
+  "version": "2.0.0",
+  "title": "PayPal checkout block",
+  "category": "woocommerce",
+  "description": "Adds an invisible block to the checkout page.",
+  "supports": {
+    "html": false,
+    "align": false,
+    "multiple": false,
+    "reusable": false
+  },
+  "parent": [
+    "woocommerce/checkout-fields-block"
+  ],
+  "attributes": {
+    "lock": {
+      "type": "object",
+      "default": {
+        "remove": true,
+        "move": true
+      }
+    }
+  },
+  "textdomain": "pymntpl-paypal-woocommerce"
+}
